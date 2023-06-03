@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>To Insert Employee</title>
+  </head>
+  <body>
+    <form action="/displayaddpage">
+      <table>
+        <thead>
+          <tr>
+            <th>Emp ID</th>
+            <th>Emp Name</th>
+            <th>Emp Sal</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            <%for(var i=0; i<empdata.length; i++){%>
+                <tr>
+                    <td><%=empdata[i].empid%></td>
+                    <td><%=empdata[i].empname%></td>
+                    <td><%=empdata[i].empsal%></td>
+                    <td>
+                        <a href="/edit/<%=empdata[i].empid%>"></a>
+                        <a href="/delete/<%=empdata[i].empid%>"></a>
+                    </td>
+                  </tr>
+            <%}%>  
+        </tbody>
+      </table>
+    </form>
+  </body>
+</html>
